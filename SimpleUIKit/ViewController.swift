@@ -61,17 +61,12 @@ class ViewController: UIViewController {
             message: message,
             preferredStyle: .alert)
         
-        let button1 = UIAlertAction(
+        let button = UIAlertAction(
             title: "OK",
             style: .default)
         
-        let button2 = UIAlertAction(
-            title: "Agree",
-            style: .default)
-
-        alert.addAction(button1)
-        alert.addAction(button2)
-        present(alert, animated: true)
+        alert.addAction(button)
+         present(alert, animated: true)
         
     }
 
