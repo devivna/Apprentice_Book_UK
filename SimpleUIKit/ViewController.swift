@@ -9,7 +9,6 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    var currentValue = 50
     
     @IBOutlet weak var headerText: UILabel!
     
@@ -19,11 +18,15 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var slider: UISlider!
     
+    var currentValue = 0 // take initial value from IB
+    
+    
     @IBOutlet weak var sliderMinValueLabel: UILabel!
     
     @IBOutlet weak var sliderMaxValueLabel: UILabel!
     
     
+    var targetValue = 0 // it will always be overwritten by the random value later
     
     @IBOutlet weak var scoreTextLabel: UILabel!
     
@@ -39,7 +42,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        currentValue = lround(Double(slider.value))
+        targetValue = Int.random(in: 1...100)
     }
         
     @IBAction func sliderMoved(_ slider: UISlider) {
@@ -50,17 +54,23 @@ class ViewController: UIViewController {
     
     @IBAction func showAlert() {
         let message = "The value of the slider is: \(currentValue)"
+            + "\nThe target value is: \(targetValue)"
         
         let alert = UIAlertController(
             title: "Excelent!",
             message: message,
             preferredStyle: .alert)
         
-        let button = UIAlertAction(
+        let button1 = UIAlertAction(
             title: "OK",
             style: .default)
+        
+        let button2 = UIAlertAction(
+            title: "Agree",
+            style: .default)
 
-        alert.addAction(button)
+        alert.addAction(button1)
+        alert.addAction(button2)
         present(alert, animated: true)
         
     }
