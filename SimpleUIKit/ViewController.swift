@@ -12,9 +12,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var headerText: UILabel!
     
-    @IBOutlet weak var headerNumber: UILabel!
-    
-    
+    @IBOutlet weak var targetLabel: UILabel!
+        
     
     @IBOutlet weak var slider: UISlider!
     
@@ -42,8 +41,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        currentValue = lround(Double(slider.value))
-        targetValue = Int.random(in: 1...100)
+        startNewRound()
     }
         
     @IBAction func sliderMoved(_ slider: UISlider) {
@@ -68,11 +66,23 @@ class ViewController: UIViewController {
         alert.addAction(button)
          present(alert, animated: true)
         
+        startNewRound()
     }
 
     @IBAction func infoButton(_ sender: UIButton) {
     }
     
+    func startNewRound() {
+        targetValue = Int.random(in: 1...100)
+        currentValue = 50
+        slider.value = Float(currentValue)
+        updateLabels()
+    }
+    
+    func updateLabels() {
+        targetLabel.text = String(targetValue)
+        // targetLabel.text = "\(targetValue)"
+    }
 
 }
 

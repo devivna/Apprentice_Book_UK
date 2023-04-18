@@ -134,7 +134,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="headerNumber" destination="qTT-cc-CJb" id="e2N-tC-dg8"/>
                         <outlet property="headerText" destination="SRW-XF-AFx" id="lUB-3f-Xf1"/>
                         <outlet property="roundNumberLabel" destination="0QF-Ls-0lo" id="NL6-a3-HeQ"/>
                         <outlet property="roundTextLabel" destination="btp-qy-8Bd" id="hbd-4x-z20"/>
@@ -143,6 +142,7 @@
                         <outlet property="slider" destination="Aky-S7-1n5" id="gjq-tl-bsD"/>
                         <outlet property="sliderMaxValueLabel" destination="yY3-0x-tb4" id="fSj-eB-z0U"/>
                         <outlet property="sliderMinValueLabel" destination="S7g-ab-1jK" id="4sI-t8-2Rv"/>
+                        <outlet property="targetLabel" destination="qTT-cc-CJb" id="4si-TX-Psw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mu3-tQ-wXq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
